@@ -6,9 +6,14 @@ import { Component } from '@angular/core';
     styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
+    title = "refresher";
     persons: string[] = [];
 
     onCreatedPerson(name: string) {
         this.persons = [...this.persons, name];
+    }
+
+    onDeletedPerson(personIndex: number) {
+        this.persons = this.persons.filter((_, index) => index !== personIndex);
     }
 }

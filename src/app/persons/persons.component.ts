@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 
 @Component({
     selector: 'app-persons',
@@ -6,12 +6,16 @@ import { Component, Input, OnInit } from '@angular/core';
     styleUrls: ['./persons.component.scss']
 })
 export class PersonsComponent implements OnInit {
-
     @Input() personList: string[] = [];
+    @Output() deletedPersonIndex = new EventEmitter<number>();
 
     constructor() {
     }
 
     ngOnInit(): void {
+    }
+
+    onDeletePerson(personIndex: number) {
+        this.deletedPersonIndex.emit(personIndex);
     }
 }

@@ -1,5 +1,8 @@
-<ul>
-    <li *ngFor="let person of personList">
-        {{ person }}
-    </li>
-</ul>
+<mat-list>
+    <mat-list-item class="list__item" *ngFor="let person of personList; let personIndex = index">
+        <h3 mat-line> {{ person }} </h3>
+        <button mat-icon-button (click)="onDeletePerson(personIndex)">
+            <mat-icon class="mat-24">delete</mat-icon>
+        </button>
+    </mat-list-item>
+</mat-list>

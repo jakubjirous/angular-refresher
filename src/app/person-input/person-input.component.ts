@@ -19,4 +19,8 @@ export class PersonInputComponent implements OnInit {
         this.createdPersonName.emit(this.enteredPersonName);
         this.enteredPersonName = '';
     }
+
+    onClearPerson() {
+        this.enteredPersonName = '';
+    }
 }

@@ -1,3 +1,11 @@
-<label for="name">Name</label>
-<input type="text" id="name" placeholder="Enter user's name" [(ngModel)]="enteredPersonName">
-<button (click)="onCreatePerson()">Create</button>
+<section class="person-input">
+    <mat-form-field class="person-input__field" appearance="fill">
+        <mat-label>Name</mat-label>
+        <input matInput type="text" placeholder="Insert name" [(ngModel)]="enteredPersonName">
+        <button *ngIf="enteredPersonName" matSuffix mat-icon-button aria-label="Clear" (click)="onClearPerson()">
+            <mat-icon>close</mat-icon>
+        </button>
+    </mat-form-field>
+
+    <button mat-raised-button color="primary" (click)="onCreatePerson()">Create</button>
+</section>

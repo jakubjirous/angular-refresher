@@ -1,4 +1,4 @@
-input, label, button {
-    display: block;
-    outline: none;
+.person-input {
+    display: flex;
+    flex-flow: column;
 }

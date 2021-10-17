@@ -20,6 +20,14 @@ Create an Angular workspace.
 ng new angular-refresher
 ```
 
+### Angular Material
+
+Material Design components for Angular.
+
+```
+ng add @angular/material   
+```
+
 ## Angular Eco System:
 
 ### Development server
@@ -52,3 +60,4 @@ ng new angular-refresher
 
 - [Angular](https://angular.io/)
 - [NodeJS](https://nodejs.org/)
+- [Angular Material](https://material.angular.io/)

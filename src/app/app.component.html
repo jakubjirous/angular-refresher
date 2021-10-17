@@ -1,2 +1,8 @@
-<app-person-input (createdPersonName)="onCreatedPerson($event)"></app-person-input>
-<app-persons [personList]="persons"></app-persons>
+<mat-toolbar>
+    <span>Persons</span>
+</mat-toolbar>
+
+<main class="main">
+    <app-person-input (createdPersonName)="onCreatedPerson($event)"></app-person-input>
+    <app-persons [personList]="persons" (deletedPersonIndex)="onDeletedPerson($event)"></app-persons>
+</main>
