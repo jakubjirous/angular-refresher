@@ -1,11 +1,18 @@
-<section class="person-input">
+<div class="input">
     <mat-form-field class="person-input__field" appearance="fill">
         <mat-label>Name</mat-label>
-        <input matInput type="text" placeholder="Insert name" [(ngModel)]="enteredPersonName">
+        <input
+            matInput type="text"
+            placeholder="Insert name"
+            [(ngModel)]="enteredPersonName"
+            (keydown.enter)="onCreatePerson()"
+        >
         <button *ngIf="enteredPersonName" matSuffix mat-icon-button aria-label="Clear" (click)="onClearPerson()">
             <mat-icon>close</mat-icon>
         </button>
     </mat-form-field>
 
-    <button mat-raised-button color="primary" (click)="onCreatePerson()">Create</button>
-</section>
+    <button mat-raised-button color="primary" (click)="onCreatePerson()">
+        Create
+    </button>
+</div>

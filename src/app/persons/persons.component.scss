@@ -1,4 +1,8 @@
-.list__item {
-    background: #f5f5f5;
-    margin: 1rem 0;
+.list {
+    overflow-y: auto;
+
+    &__item {
+        background: #f5f5f5;
+        margin: 1rem 0;
+    }
 }

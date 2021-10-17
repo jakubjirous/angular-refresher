@@ -1,8 +1,12 @@
-<mat-toolbar>
-    <span>Persons</span>
-</mat-toolbar>
-
 <main class="main">
-    <app-person-input (createdPersonName)="onCreatedPerson($event)"></app-person-input>
-    <app-persons [personList]="persons" (deletedPersonIndex)="onDeletedPerson($event)"></app-persons>
+    <section class="main__header">
+        <mat-toolbar class="toolbar">
+            <span>Persons</span>
+        </mat-toolbar>
+        <app-person-input (createdPersonName)="onCreatedPerson($event)"></app-person-input>
+    </section>
+
+    <section class="main__content">
+        <app-persons [personList]="persons" (deletedPersonIndex)="onDeletedPerson($event)"></app-persons>
+    </section>
 </main>
