@@ -16,6 +16,23 @@
 
     &__content {
         padding: 1rem;
-        padding-top: calc(#{toolbar.$maximum-height-desktop} + 8rem);
+        padding-top: #{toolbar.$maximum-height-desktop};
+    }
+}
+
+.toolbar {
+    display: flex;
+    flex-flow: row;
+    justify-content: space-between;
+    padding: 0 1rem;
+
+    &__buttons {
+        display: flex;
+        flex-flow: row;
+        justify-content: space-evenly;
+
+        & button {
+            margin-left: 1rem;
+        }
     }
 }

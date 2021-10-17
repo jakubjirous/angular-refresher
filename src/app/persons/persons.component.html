@@ -1,4 +1,4 @@
-<mat-list class="list">
+<mat-list class="list" *ngIf="personList?.length !== 0">
     <mat-list-item class="list__item" *ngFor="let person of personList; let personIndex = index">
         <h3 mat-line> {{ person }} </h3>
         <button mat-icon-button (click)="onDeletePerson(personIndex)">
@@ -6,3 +6,13 @@
         </button>
     </mat-list-item>
 </mat-list>
+
+<div class="empty" *ngIf="personList?.length === 0">
+    <h3>Persons list is empty</h3>
+</div>
+
+<div class="fab">
+    <button mat-mini-fab color="primary" aria-label="Create" routerLink="/input">
+        <mat-icon>add</mat-icon>
+    </button>
+</div>

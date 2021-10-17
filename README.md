@@ -28,6 +28,14 @@ Material Design components for Angular.
 ng add @angular/material   
 ```
 
+### Routing module
+
+New module for routing.
+
+```
+ng g module routing
+```
+
 ## Angular Eco System:
 
 ### Development server
@@ -61,3 +69,5 @@ ng add @angular/material
 - [Angular](https://angular.io/)
 - [NodeJS](https://nodejs.org/)
 - [Angular Material](https://material.angular.io/)
+- [Routing](https://angular.io/guide/routing-overview)
+- [RxJS & Observables](https://academind.com/learn/javascript/understanding-rxjs/)

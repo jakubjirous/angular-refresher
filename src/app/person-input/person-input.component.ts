@@ -1,4 +1,6 @@
-import { Component, EventEmitter, OnInit, Output } from '@angular/core';
+import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
+import { Router } from "@angular/router";
+import { PersonsService } from "../services/persons-service/persons.service";
 
 @Component({
     selector: 'app-person-input',
@@ -6,18 +8,25 @@ import { Component, EventEmitter, OnInit, Output } from '@angular/core';
     styleUrls: ['./person-input.component.scss']
 })
 export class PersonInputComponent implements OnInit {
-    @Output() createdPersonName = new EventEmitter<string>();
-    enteredPersonName: string = "";
+    enteredPersonName: string = '';
+    @ViewChild("personNameInput") personNameInput: ElementRef | undefined;
 
-    constructor() {
+    constructor(private personsService: PersonsService, private router: Router) {
     }
 
     ngOnInit(): void {
     }
 
+    ngAfterViewInit() {
+        this.personNameInput?.nativeElement.focus();
+    }
+
     onCreatePerson() {
-        this.createdPersonName.emit(this.enteredPersonName);
-        this.enteredPersonName = '';
+        if (this.enteredPersonName !== '') {
+            this.personsService.addPerson(this.enteredPersonName);
+            this.enteredPersonName = '';
+            this.router.navigate(['/'])
+        }
     }
 
     onClearPerson() {

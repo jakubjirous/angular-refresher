@@ -2,11 +2,17 @@
     <section class="main__header">
         <mat-toolbar class="toolbar">
             <span>Persons</span>
+            <div class="toolbar__buttons">
+                <button mat-raised-button color="primary" routerLink="/">
+                    Persons list
+                </button>
+                <button mat-raised-button color="primary" routerLink="/input">
+                    Create person
+                </button>
+            </div>
         </mat-toolbar>
-        <app-person-input (createdPersonName)="onCreatedPerson($event)"></app-person-input>
     </section>
-
     <section class="main__content">
-        <app-persons [personList]="persons" (deletedPersonIndex)="onDeletedPerson($event)"></app-persons>
+        <router-outlet></router-outlet>
     </section>
 </main>

@@ -9,11 +9,12 @@ import { MatListModule } from "@angular/material/list";
 import { MatSliderModule } from "@angular/material/slider";
 import { MatToolbarModule } from "@angular/material/toolbar";
 import { BrowserModule } from '@angular/platform-browser';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { AppComponent } from './app.component';
-import { PersonsComponent } from './persons/persons.component';
 import { PersonInputComponent } from './person-input/person-input.component';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { PersonsComponent } from './persons/persons.component';
+import { RoutingModule } from "./routing/routing.module";
 
 @NgModule({
     declarations: [
@@ -22,6 +23,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
         PersonInputComponent
     ],
     imports: [
+        RoutingModule,
         BrowserModule,
         FormsModule,
         BrowserAnimationsModule,
