@@ -1,11 +1,15 @@
-<mat-list class="list" *ngIf="personList?.length !== 0">
+<mat-list class="list" *ngIf="personList?.length !== 0 || !isFetching">
     <mat-list-item class="list__item" *ngFor="let person of personList; let personIndex = index">
-        <h3 mat-line> {{ person }} </h3>
-        <button mat-icon-button (click)="onDeletePerson(personIndex)">
+        <h3 mat-line> {{ person?.name }} </h3>
+        <button mat-icon-button (click)="onDeletePerson(personIndex)" *ngIf="!person?.fetched">
             <mat-icon class="mat-24">delete</mat-icon>
         </button>
     </mat-list-item>
 </mat-list>
+
+<div class="loading" *ngIf="isFetching">
+    <mat-progress-spinner color="primary" mode="indeterminate"></mat-progress-spinner>
+</div>
 
 <div class="empty" *ngIf="personList?.length === 0">
     <h3>Persons list is empty</h3>

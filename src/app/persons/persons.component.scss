@@ -10,7 +10,7 @@
     }
 }
 
-.empty {
+.empty, .loading {
     height: calc(100vh - #{toolbar.$maximum-height-desktop} - 2rem);
     display: flex;
     flex-flow: row;
